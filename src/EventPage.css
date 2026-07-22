@@ -68,7 +68,7 @@
   align-items: center;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 36px 0px 0 0px;
+  padding: 38px 0px 0 0px;
   position: relative;
   z-index: 2;
   scrollbar-width: none;
@@ -232,6 +232,15 @@
   letter-spacing: 0.3px;
 }
 
+.ev-rsvp-link {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.ev-rsvp-link:hover {
+  opacity: 0.8;
+}
+
 .ev-info-sep {
   color: rgba(255,255,255,0.5);
   font-size: 14px;
@@ -278,6 +287,8 @@
   letter-spacing: 0.3px;
   box-shadow: 0 4px 14px rgba(126,20,26,0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .ev-book-btn:hover {

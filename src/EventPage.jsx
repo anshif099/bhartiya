@@ -75,7 +75,16 @@ function EventPage({ onBack, onTabChange }) {
         {/* Dark Red Info Bar */}
         <div className="ev-info-bar">
           <div className="ev-info-bar-row">
-            <span className="ev-info-text">RSVP +91 1234567890</span>
+            <a
+              href="https://forms.office.com/r/yhu1tj1yDJ"
+              target="_blank"
+              rel="noreferrer"
+              className="ev-info-text ev-rsvp-link"
+            >
+              RSVP
+            </a>
+            <span className="ev-info-sep">|</span>
+            <span className="ev-info-text">+91 1234567890</span>
             <span className="ev-info-sep">|</span>
             <span className="ev-info-text">abc@mail.com</span>
           </div>
@@ -87,7 +96,14 @@ function EventPage({ onBack, onTabChange }) {
         {/* Bottom CTA */}
         <div className="ev-bottom">
           <p className="ev-explore-text">Explore Your GCC Opportunity With Us</p>
-          <button className="ev-book-btn">Book A Meeting</button>
+          <a
+            href="https://forms.office.com/r/3RUhmYaK2F"
+            target="_blank"
+            rel="noreferrer"
+            className="ev-book-btn"
+          >
+            Book A Meeting
+          </a>
         </div>
       </div>
 
