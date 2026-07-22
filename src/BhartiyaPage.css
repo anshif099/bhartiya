@@ -104,7 +104,7 @@
   width: 100%;
   border: 1.5px solid #ddc4b2;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.55);
+ 
   backdrop-filter: blur(2px);
   overflow: hidden;
   margin-bottom: 6px;
@@ -175,7 +175,7 @@
 }
 
 .bp-plane {
-  width: 44px;
+  width: 31px;
   height: auto;
   object-fit: contain;
   animation: planeBob 4s ease-in-out infinite;
@@ -319,7 +319,7 @@ border-bottom-right-radius: 10px;
   text-orientation: mixed;
   transform: none; /* Flow top-to-bottom under icon */
   color: #7e141a; /* Dark red text matching design */
-  text-transform: uppercase;
+  
   line-height: 1;
   white-space: nowrap;
   transition: color 0.25s ease;

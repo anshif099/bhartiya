@@ -46,7 +46,7 @@ const TABS = [
   },
   {
     id: 'about',
-    label: 'ABOUT GCCS',
+    label: 'ABOUT GCCs',
     icon: '/Bhartiya Converge About Logo.svg',
   },
   {

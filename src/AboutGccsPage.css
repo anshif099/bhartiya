@@ -31,7 +31,7 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 8px 12px 14px 14px;
+  padding: 8px 12px 14px 22px;
   position: relative;
   z-index: 2;
   scrollbar-width: none;
@@ -57,13 +57,13 @@
 .about-img-left {
   position: absolute;
   left: 0px;
-  top: 4px;
-  width: 125px;
+  top: 16px;
+  width: 90px;
   height: 188px;
   border-radius: 62px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
-  border: 2.5px solid #ffffff;
+  border: 0px solid #ffffff;
   z-index: 1;
   animation: heroLeftIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -83,14 +83,14 @@
 /* Right Horizontal Capsule Image — Meeting, ON TOP of left */
 .about-img-right {
   position: absolute;
-  right: 0px;
-  top: 18px;
-  width: 195px;
-  height: 122px;
+  right: 3px;
+  top: 40px;
+  width: 260px;
+  height: 130px;
   border-radius: 60px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
-  border: 2.5px solid #ffffff;
+  border-left: 7.5px solid #FAF6F5;
   z-index: 2;
   animation: heroRightIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
 }
@@ -120,6 +120,8 @@
   color: #881518;
   letter-spacing: 0.4px;
   display: block;
+  padding-left: 52px;
+  margin-top: 20px;
 }
 
 .about-section-title .main {
@@ -128,7 +130,7 @@
   color: #881518;
   letter-spacing: -0.2px;
   line-height: 1.25;
-  display: block;
+  display: block;padding-left: 52px;
 }
 
 .about-description {
@@ -138,6 +140,7 @@
   color: #333333;
   margin-bottom: 10px;
   animation: fadeInUp 0.5s ease-out 0.3s both;
+  padding-left: 52px;
 }
 
 .about-description strong {
@@ -153,6 +156,7 @@
   letter-spacing: -0.2px;
   margin-bottom: 8px;
   animation: fadeInUp 0.5s ease-out 0.4s both;
+  padding-left: 52px;
 }
 
 /* Benefits List */
@@ -160,6 +164,7 @@
   display: flex;
   flex-direction: column;
   gap: 7px;
+  padding-left: 52px;
 }
 
 .benefit-item {
