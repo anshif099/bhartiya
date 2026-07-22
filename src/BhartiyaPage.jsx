@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './BhartiyaPage.css'
 
 const TABS = [
@@ -25,14 +24,6 @@ const TABS = [
 ]
 
 function BhartiyaPage({ onBack, onTabChange }) {
-  const [activeTab, setActiveTab] = useState('bhartiya')
-
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId)
-    if (onTabChange) {
-      onTabChange(tabId)
-    }
-  }
 
   return (
     <main className="bp-page">
@@ -122,8 +113,8 @@ function BhartiyaPage({ onBack, onTabChange }) {
         {TABS.map((tab) => (
           <button
             key={tab.id}
-            className={`bp-tab ${activeTab === tab.id ? 'bp-tab--active' : ''}`}
-            onClick={() => handleTabClick(tab.id)}
+            className={`bp-tab ${tab.id === 'bhartiya' ? 'bp-tab--active' : ''}`}
+            onClick={() => onTabChange && onTabChange(tab.id)}
             title={tab.label}
           >
             <span className="bp-tab-icon">
