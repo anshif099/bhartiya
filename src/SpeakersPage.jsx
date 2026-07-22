@@ -49,47 +49,22 @@ function SpeakersPage({ onBack, onTabChange }) {
       {/* Main Content */}
       <div className="sp-content">
 
-        {/* Heading */}
+      
         <h1 className="sp-main-heading">
-          Meet the ones who've<br />leveraged the opportunity
+          <br />
         </h1>
 
         <p className="sp-subtext">
-          The leaders who grew their business<br />
-          rapidly and profitably - the ones who used<br />
-          technology as an enabler.
+         
         </p>
 
-        <p className="sp-meet-label">Meet Our Speakers</p>
+        <p className="sp-meet-label"></p>
 
-        {/* Speaker Cards */}
-        <div className="sp-cards">
-          {SPEAKERS.map((s) => (
-            <div key={s.id} className={`sp-card-wrapper photo-${s.photoSide}`}>
-              <div className="sp-card">
-                {/* Text side */}
-                <div className="sp-card-text">
-                  <span className="sp-card-name">{s.name}</span>
-                  <div className="sp-card-role-row">
-                    <span className="sp-card-role">{s.role}</span>
-                    <LinkedInIcon />
-                  </div>
-                </div>
-
-                {/* Floating photo overflowing card top */}
-                <div className="sp-card-photo">
-                  <img src={s.photo} alt={s.name} />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+       
 
         {/* Footer text */}
         <p className="sp-footer-text">
-          They will share their success roadmap from building<br />
-          their strategic India capability centre to the<br />
-          decisions they would make again in a heartbeat.
+         
         </p>
       </div>
 
