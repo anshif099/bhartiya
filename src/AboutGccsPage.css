@@ -1,4 +1,4 @@
-/* AboutGccsPage.css - Perfect fit for hero image cutouts & text layout */
+/* AboutGccsPage.css - Fits 100% Full Screen Without Scroll */
 
 .about-page {
   width: 100%;
@@ -31,7 +31,7 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 10px 14px 24px 14px;
+  padding: 8px 12px 14px 14px;
   position: relative;
   z-index: 2;
   scrollbar-width: none;
@@ -44,12 +44,12 @@
   display: none;
 }
 
-/* Top Hero Images Section */
+/* Top Hero Images Section - Sized to cleanly cover the BG shapes */
 .about-hero-images {
   position: relative;
   width: 100%;
-  height: 255px;
-  margin-bottom: 18px;
+  height: 195px;
+  margin-bottom: 8px;
   flex-shrink: 0;
 }
 
@@ -57,14 +57,14 @@
 .about-img-left {
   position: absolute;
   left: 0px;
-  top: 10px;
-  width: 148px;
-  height: 235px;
-  border-radius: 74px;
+  top: 4px;
+  width: 125px;
+  height: 188px;
+  border-radius: 62px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  border: 3px solid #ffffff;
-  z-index: 1;              /* BEHIND right image */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  border: 2.5px solid #ffffff;
+  z-index: 1;
   animation: heroLeftIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -84,14 +84,14 @@
 .about-img-right {
   position: absolute;
   right: 0px;
-  top: 22px;
-  width: 230px;
-  height: 152px;
-  border-radius: 76px;
+  top: 18px;
+  width: 195px;
+  height: 122px;
+  border-radius: 60px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  border: 3px solid #ffffff;
-  z-index: 2;              /* IN FRONT of left image */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  border: 2.5px solid #ffffff;
+  z-index: 2;
   animation: heroRightIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
 }
 
@@ -109,13 +109,13 @@
 
 /* Section 1: What is a GCC */
 .about-section-title {
-  margin-top: 6px;
-  margin-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 4px;
   animation: fadeInUp 0.5s ease-out 0.2s both;
 }
 
 .about-section-title .sub {
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 800;
   color: #881518;
   letter-spacing: 0.4px;
@@ -123,7 +123,7 @@
 }
 
 .about-section-title .main {
-  font-size: 15.5px;
+  font-size: 14px;
   font-weight: 800;
   color: #881518;
   letter-spacing: -0.2px;
@@ -132,11 +132,11 @@
 }
 
 .about-description {
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.45;
   color: #333333;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   animation: fadeInUp 0.5s ease-out 0.3s both;
 }
 
@@ -147,11 +147,11 @@
 
 /* Section 2: How It Benefits You */
 .about-benefits-title {
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 800;
   color: #881518;
   letter-spacing: -0.2px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   animation: fadeInUp 0.5s ease-out 0.4s both;
 }
 
@@ -159,14 +159,14 @@
 .about-benefits-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 7px;
 }
 
 .benefit-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 3px 0;
+  gap: 8px;
+  padding: 1px 0;
   transition: transform 0.2s ease;
   animation: benefitSlideIn 0.45s ease-out both;
 }
@@ -176,8 +176,8 @@
 }
 
 .benefit-icon-wrapper {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -185,17 +185,17 @@
 }
 
 .benefit-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(136, 21, 24, 0.12));
 }
 
 .benefit-text {
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 600;
   color: #2b2b2b;
-  line-height: 1.38;
+  line-height: 1.32;
   flex: 1;
 }
 

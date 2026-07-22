@@ -156,11 +156,12 @@
   margin-top: 4px;
 }
 
-.bp-plane-area { margin-bottom: -4px; }
+.bp-plane-area { margin-bottom: -2px; }
 
 .bp-plane {
-  width: 48px;
+  width: 55px;
   height: auto;
+  object-fit: contain;
   animation: planeBob 4s ease-in-out infinite;
 }
 

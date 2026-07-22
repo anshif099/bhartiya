@@ -27,10 +27,11 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 28px 14px 24px 16px;
+  padding: 16px 14px 16px 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   scrollbar-width: none;
   -ms-overflow-style: none;
   position: relative;
@@ -40,33 +41,33 @@
 
 /* ── Top Heading ── */
 .sp-main-heading {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 900;
   color: #881518;
   text-align: center;
   line-height: 1.25;
   letter-spacing: -0.2px;
-  margin: 0 0 12px 0;
+  margin: 18px 0 6px 0;
   text-transform: uppercase;
   animation: spFadeDown 0.55s ease-out 0.05s both;
 }
 
 .sp-subtext {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
   color: #3a2a2a;
   text-align: center;
-  line-height: 1.55;
-  margin: 0 0 10px 0;
+  line-height: 1.45;
+  margin: 0 0 6px 0;
   animation: spFadeDown 0.55s ease-out 0.15s both;
 }
 
 .sp-meet-label {
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #881518;
   font-style: italic;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
   animation: spFadeDown 0.55s ease-out 0.22s both;
 }
 
@@ -74,35 +75,39 @@
 .sp-cards {
   display: flex;
   flex-direction: column;
-  gap: 0px; /* Cards overlap with floating photos, gap handled by card padding-top */
+  gap: 0px;
   width: 100%;
 }
 
-/* Each card wrapper reserves space for the overflowing photo above */
+/* Each card wrapper reserves space so heads don't touch card above */
 .sp-card-wrapper {
   position: relative;
   width: 100%;
-  margin-bottom: 28px; /* Space between cards - accounts for photo overhang of next card */
+  margin-bottom: 22px;
+}
+
+.sp-card-wrapper:last-child {
+  margin-bottom: 8px;
 }
 
 /* The pill card */
 .sp-card {
   width: 100%;
   background: #fdf2eb;
-  border-radius: 50px;
+  border-radius: 46px;
   border: 1.5px solid rgba(200, 160, 140, 0.4);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  height: 84px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  height: 74px;
   position: relative;
   display: flex;
   align-items: center;
-  overflow: visible; /* Allow photo to overflow card top */
+  overflow: visible;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .sp-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(136,21,24,0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(136,21,24,0.14);
 }
 
 /* Text block inside card */
@@ -111,15 +116,15 @@
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  padding: 12px 14px;
+  padding: 10px 12px;
 }
 
 .sp-card-name {
-  font-size: 18px;
+  font-size: 16.5px;
   font-weight: 800;
   color: #881518;
   line-height: 1.15;
-  margin: 0 0 3px 0;
+  margin: 0 0 2px 0;
 }
 
 .sp-card-role-row {
@@ -129,7 +134,7 @@
 }
 
 .sp-card-role {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 500;
   color: #4a3a3a;
   line-height: 1.2;
@@ -138,17 +143,17 @@
 
 /* LinkedIn inline icon */
 .sp-linkedin-icon {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
 }
 
-/* Speaker photo — floats above and clips from top of pill */
+/* Speaker photo — floats neatly above pill card without touching card above */
 .sp-card-photo {
   position: absolute;
-  bottom: 0px; /* Anchor photo bottom to card center-ish */
-  width: 105px;
-  height: 145px;
+  bottom: 0px;
+  width: 96px;
+  height: 116px;
   border-radius: 8px;
   overflow: hidden;
   z-index: 5;
@@ -165,20 +170,20 @@
 
 /* Photo on Right (Julie, Alfie) */
 .sp-card-wrapper.photo-right .sp-card-photo {
-  right: 8px;
+  right: 6px;
 }
 .sp-card-wrapper.photo-right .sp-card-text {
-  padding-right: 118px; /* Don't overlap photo space */
-  padding-left: 20px;
+  padding-right: 106px;
+  padding-left: 16px;
 }
 
 /* Photo on Left (Peter) */
 .sp-card-wrapper.photo-left .sp-card-photo {
-  left: 8px;
+  left: 6px;
 }
 .sp-card-wrapper.photo-left .sp-card-text {
-  padding-left: 118px;
-  padding-right: 20px;
+  padding-left: 106px;
+  padding-right: 16px;
   text-align: right;
 }
 .sp-card-wrapper.photo-left .sp-card-role-row {
@@ -192,12 +197,12 @@
 
 /* ── Footer text ── */
 .sp-footer-text {
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 400;
   color: #3a2a2a;
   text-align: center;
-  line-height: 1.6;
-  margin: 4px 0 0 0;
+  line-height: 1.5;
+  margin: 2px 0 0 0;
   animation: spFadeDown 0.55s ease-out 0.75s both;
 }
 

@@ -109,9 +109,7 @@ function BhartiyaPage({ onBack, onTabChange }) {
         {/* Plane + BHARTIYA logo */}
         <div className="bp-bottom-section">
           <div className="bp-plane-area">
-            <svg className="bp-plane" viewBox="0 0 56 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M52 14L34 5V9L8 7L5 9.5H18L11 14H18L5 19L8 21L34 19V23L52 14Z" fill="#6b8aaa" opacity="0.75"/>
-            </svg>
+            <img src="/Flight.webp" alt="Flight" className="bp-plane" />
           </div>
           <h1 className="bp-bhartiya-logo">BHARTIYA</h1>
         </div>
