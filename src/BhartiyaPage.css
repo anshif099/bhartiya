@@ -221,7 +221,7 @@
   flex-direction: column;
   background-color: #b5a69c; /* Warm taupe background forming gutter behind tabs */
   padding: 10px 0;
-  gap: 6px;
+  gap: 0px;
 }
 
 /* Each Tab - Inactive state is smaller & inset from left */
@@ -234,13 +234,16 @@
   gap: 10px;
   background: #f7efe9; /* Light cream card background */
   border: none;
-  border-radius: 14px 0 0 14px; /* Rounded top-left & bottom-left corners */
-  margin-left: 6px; /* Inset from left edge when inactive */
+  border-radius: 0px 0 0 1px; /* Rounded top-left & bottom-left corners */
+  margin-top:0px;
+  margin-right:20px;
+  margin-left: 0px; /* Inset from left edge when inactive */
   cursor: pointer;
   padding: 14px 4px 10px 4px;
   position: relative;
   box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.16);
-
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px; 
   /* Smooth expand & slide transition */
   transition:
     background 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -255,7 +258,8 @@
   margin-left: 0px; /* Expands to full left width */
   transform: translateX(-6px); /* Protrudes bigger over content page */
   box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.45);
-  border-radius: 14px 0 0 14px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   z-index: 5;
 }
 
