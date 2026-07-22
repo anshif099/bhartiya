@@ -111,7 +111,9 @@ function BhartiyaPage({ onBack, onTabChange }) {
           <div className="bp-plane-area">
             <img src="/Flight.webp" alt="Flight" className="bp-plane" />
           </div>
-          <img src="/Bhartiya.svg" alt="BHARTIYA" className="bp-bhartiya-logo-img" />
+          <div className="bp-logo-box">
+            <img src="/Bhartiya.svg" alt="BHARTIYA" className="bp-bhartiya-logo-img" />
+          </div>
         </div>
       </div>
 
