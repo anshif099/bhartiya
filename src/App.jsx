@@ -137,9 +137,7 @@ function App({ onSlideComplete }) {
           <div className="slide-text-wrapper" onClick={handleTrackClick}>
             <span className="slide-text">
               {isUnlocked ? 'Welcome to Converge' : 'Slide To Know More'}
-              <span className="arrows">
-                <i>&gt;</i><i>&gt;</i><i>&gt;</i>
-              </span>
+              <img src="/Arrow.svg" alt=">>>" className="slide-arrow-img" />
             </span>
           </div>
         </section>

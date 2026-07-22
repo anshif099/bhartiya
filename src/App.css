@@ -2,7 +2,8 @@
 
 .mobile-page-container {
   width: 100%;
-  max-width: 440px; /* Standard mobile viewport frame */
+  max-width: 440px;
+  /* Standard mobile viewport frame */
   height: 100vh;
   height: 100dvh;
   background-image: url('/homebg.png');
@@ -54,7 +55,7 @@
 }
 
 .brand-logo {
-  height: 96px;
+  height: 76px;
   width: auto;
   max-width: 270px;
   object-fit: contain;
@@ -66,7 +67,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2px;
+  margin-top: 10px;
 }
 
 .partnership-label {
@@ -88,7 +89,7 @@
 
 /* Event Headline Section */
 .event-headline-section {
-  margin-top: 20px;
+  margin-top: 18px;
   text-align: center;
 }
 
@@ -120,7 +121,7 @@
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* Slider Button Section — Transparent inside, exact alignment */
+/* Slider Button Section */
 .slider-section {
   margin-top: 18px;
   display: flex;
@@ -189,38 +190,31 @@
   font-family: 'Ubuntu', sans-serif;
   font-size: 16.5px;
   font-weight: 500;
-  color: #ffffff;
+  color: #ffdbc7;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   letter-spacing: 0.2px;
 }
 
-.arrows {
-  display: inline-flex;
-  margin-left: 2px;
-}
-
-.arrows i {
-  font-style: normal;
-  display: inline-block;
+.slide-arrow-img {
+  height: 16px;
+  width: auto;
+  object-fit: contain;
   animation: pulseArrow 1.4s infinite ease-in-out;
-  color: #ffffff;
-  font-weight: 600;
 }
-
-.arrows i:nth-child(1) { animation-delay: 0s; }
-.arrows i:nth-child(2) { animation-delay: 0.2s; }
-.arrows i:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes pulseArrow {
-  0%, 100% {
-    opacity: 0.3;
+
+  0%,
+  100% {
+    opacity: 0.4;
     transform: translateX(0);
   }
+
   50% {
     opacity: 1;
-    transform: translateX(2px);
+    transform: translateX(3px);
   }
 }
