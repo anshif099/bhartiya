@@ -26,7 +26,7 @@
   position: absolute;
   inset: 0;
   background-image: url('/bhartiya.png');
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center bottom;
   background-repeat: no-repeat;
   z-index: 0;
@@ -157,41 +157,41 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-top: 4px;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
 }
 
 .bp-plane-area {
-  margin-bottom: -2px;
+  position: absolute;
+  left: 10px;
+  top: -18px;
+  z-index: 2;
 }
 
 .bp-plane {
-  width: 55px;
+  width: 48px;
   height: auto;
   object-fit: contain;
   animation: planeBob 4s ease-in-out infinite;
 }
 
 @keyframes planeBob {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translate(0, 0) rotate(-2deg);
   }
-
   50% {
     transform: translate(4px, -5px) rotate(1deg);
   }
 }
 
-.bp-bhartiya-logo {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: clamp(28px, 8vw, 38px);
-  font-weight: 900;
-  color: #c0392b;
-  margin: 0;
-  letter-spacing: 1px;
-  line-height: 1;
+.bp-bhartiya-logo-img {
+  width: 260px;
+  max-width: 84%;
+  height: auto;
+  object-fit: contain;
+  margin: 6px 0 0 0;
+  display: block;
 }
 
 /* ─── Right Sidebar ───────────────────────────────────── */
