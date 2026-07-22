@@ -1,0 +1,235 @@
+/* SpeakersPage.css — Pixel-perfect Speakers Page */
+
+.sp-page {
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #f5d9c8;
+  background-image: url('/Bharatiya Converge Speakers BG.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+}
+
+@media (max-width: 440px) {
+  .sp-page { max-width: 100vw; box-shadow: none; }
+}
+
+/* ── Main Content Column ── */
+.sp-content {
+  width: calc(100% - 72px);
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 28px 14px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+  z-index: 2;
+}
+.sp-content::-webkit-scrollbar { display: none; }
+
+/* ── Top Heading ── */
+.sp-main-heading {
+  font-size: 19px;
+  font-weight: 900;
+  color: #881518;
+  text-align: center;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  animation: spFadeDown 0.55s ease-out 0.05s both;
+}
+
+.sp-subtext {
+  font-size: 12px;
+  font-weight: 400;
+  color: #3a2a2a;
+  text-align: center;
+  line-height: 1.55;
+  margin: 0 0 10px 0;
+  animation: spFadeDown 0.55s ease-out 0.15s both;
+}
+
+.sp-meet-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #881518;
+  font-style: italic;
+  margin: 0 0 20px 0;
+  animation: spFadeDown 0.55s ease-out 0.22s both;
+}
+
+/* ── Speaker Cards ── */
+.sp-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Cards overlap with floating photos, gap handled by card padding-top */
+  width: 100%;
+}
+
+/* Each card wrapper reserves space for the overflowing photo above */
+.sp-card-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 28px; /* Space between cards - accounts for photo overhang of next card */
+}
+
+/* The pill card */
+.sp-card {
+  width: 100%;
+  background: #fdf2eb;
+  border-radius: 50px;
+  border: 1.5px solid rgba(200, 160, 140, 0.4);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  height: 84px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: visible; /* Allow photo to overflow card top */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(136,21,24,0.14);
+}
+
+/* Text block inside card */
+.sp-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding: 12px 14px;
+}
+
+.sp-card-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #881518;
+  line-height: 1.15;
+  margin: 0 0 3px 0;
+}
+
+.sp-card-role-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sp-card-role {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #4a3a3a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* LinkedIn inline icon */
+.sp-linkedin-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Speaker photo — floats above and clips from top of pill */
+.sp-card-photo {
+  position: absolute;
+  bottom: 0px; /* Anchor photo bottom to card center-ish */
+  width: 105px;
+  height: 145px;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.sp-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Photo on Right (Julie, Alfie) */
+.sp-card-wrapper.photo-right .sp-card-photo {
+  right: 8px;
+}
+.sp-card-wrapper.photo-right .sp-card-text {
+  padding-right: 118px; /* Don't overlap photo space */
+  padding-left: 20px;
+}
+
+/* Photo on Left (Peter) */
+.sp-card-wrapper.photo-left .sp-card-photo {
+  left: 8px;
+}
+.sp-card-wrapper.photo-left .sp-card-text {
+  padding-left: 118px;
+  padding-right: 20px;
+  text-align: right;
+}
+.sp-card-wrapper.photo-left .sp-card-role-row {
+  justify-content: flex-end;
+}
+
+/* Staggered card entrance */
+.sp-card-wrapper:nth-child(1) { animation: spCardIn 0.55s ease-out 0.3s both; }
+.sp-card-wrapper:nth-child(2) { animation: spCardIn 0.55s ease-out 0.45s both; }
+.sp-card-wrapper:nth-child(3) { animation: spCardIn 0.55s ease-out 0.6s both; }
+
+/* ── Footer text ── */
+.sp-footer-text {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #3a2a2a;
+  text-align: center;
+  line-height: 1.6;
+  margin: 4px 0 0 0;
+  animation: spFadeDown 0.55s ease-out 0.75s both;
+}
+
+/* ── Back Button ── */
+.sp-back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(136, 21, 24, 0.88);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.sp-back-btn:hover { background: #881518; transform: scale(1.12); }
+
+/* ── Keyframes ── */
+@keyframes spFadeDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spCardIn {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

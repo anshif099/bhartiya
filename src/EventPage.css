@@ -1,0 +1,317 @@
+/* EventPage.css — Pixel-perfect Event Page */
+
+.ev-page {
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #f5e8dc;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+}
+
+@media (max-width: 440px) {
+  .ev-page { max-width: 100vw; box-shadow: none; }
+}
+
+/* Decorative curved lines — top right */
+.ev-deco-tr {
+  position: absolute;
+  top: -10px;
+  right: 72px; /* keep left of sidebar */
+  width: 140px;
+  height: 140px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+/* Decorative curved lines — bottom left */
+.ev-deco-bl {
+  position: absolute;
+  bottom: 155px;
+  left: -10px;
+  width: 110px;
+  height: 110px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+/* World map dot watermark */
+.ev-map-dots {
+  position: absolute;
+  left: 0;
+  right: 72px;
+  top: 30%;
+  height: 40%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: radial-gradient(circle, #881518 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+/* ── Main Content Column ── */
+.ev-content {
+  width: calc(100% - 72px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 36px 18px 0 18px;
+  position: relative;
+  z-index: 2;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.ev-content::-webkit-scrollbar { display: none; }
+
+/* ── Section 1: What You'll Leave With ── */
+.ev-leave-heading {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #881518;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0 0 12px 0;
+  animation: evFadeUp 0.5s ease-out 0.05s both;
+}
+
+.ev-leave-body {
+  font-size: 12px;
+  font-weight: 400;
+  color: #2a1a1a;
+  text-align: center;
+  line-height: 1.65;
+  margin: 0 0 28px 0;
+  animation: evFadeUp 0.5s ease-out 0.15s both;
+}
+
+/* ── Section 2: The Details ── */
+.ev-details-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #881518;
+  text-align: center;
+  margin: 0 0 4px 0;
+  font-style: italic;
+  animation: evFadeUp 0.5s ease-out 0.22s both;
+}
+
+.ev-date {
+  font-size: 30px;
+  font-weight: 900;
+  color: #881518;
+  text-align: center;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  animation: evFadeUp 0.5s ease-out 0.28s both;
+}
+
+.ev-date sup {
+  font-size: 15px;
+  font-weight: 900;
+  vertical-align: super;
+}
+
+/* Location row */
+.ev-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 20px;
+  animation: evFadeUp 0.5s ease-out 0.35s both;
+}
+
+.ev-location-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ev-pin-icon {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.ev-location-venue {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.ev-location-time {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  margin-top: 2px;
+  padding-left: 32px; /* align under venue text (skip icon width) */
+}
+
+/* Divider */
+.ev-divider {
+  width: 80%;
+  height: 1px;
+  background: rgba(136,21,24,0.25);
+  margin: 0 0 20px 0;
+  animation: evFadeUp 0.5s ease-out 0.4s both;
+}
+
+/* ── Section 3: CTA ── */
+.ev-cta-heading {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #881518;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0 0 4px 0;
+  animation: evFadeUp 0.5s ease-out 0.45s both;
+}
+
+.ev-cta-sub {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  margin: 0 0 8px 0;
+  animation: evFadeUp 0.5s ease-out 0.5s both;
+}
+
+.ev-cta-small {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #3a2a2a;
+  text-align: center;
+  line-height: 1.55;
+  margin: 0 0 14px 0;
+  animation: evFadeUp 0.5s ease-out 0.55s both;
+}
+
+/* ── Dark Red Info Bar ── */
+.ev-info-bar {
+  width: 100%;
+  background: #7e141a;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: evFadeUp 0.5s ease-out 0.6s both;
+}
+
+.ev-info-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ev-info-text {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.ev-info-sep {
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.ev-info-url {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+/* ── Bottom CTA area ── */
+.ev-bottom {
+  width: 100%;
+  background: #f5e8dc;
+  padding: 14px 18px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: evFadeUp 0.5s ease-out 0.65s both;
+}
+
+.ev-explore-text {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #3a2a2a;
+  text-align: center;
+}
+
+.ev-book-btn {
+  background: #7e141a;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 14px rgba(126,20,26,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.ev-book-btn:hover {
+  background: #881518;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(126,20,26,0.45);
+}
+
+.ev-book-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── Back Button ── */
+.ev-back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(136, 21, 24, 0.88);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.ev-back-btn:hover { background: #881518; transform: scale(1.12); }
+
+/* ── Keyframes ── */
+@keyframes evFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

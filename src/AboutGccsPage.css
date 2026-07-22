@@ -1,0 +1,257 @@
+/* AboutGccsPage.css - Perfect fit for hero image cutouts & text layout */
+
+.about-page {
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #f7ebe1;
+  background-image: url('/Bharatiya Converge About BG.webp');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+}
+
+@media (max-width: 440px) {
+  .about-page {
+    max-width: 100vw;
+    box-shadow: none;
+  }
+}
+
+/* Main Content Column */
+.about-content {
+  width: calc(100% - 72px);
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 14px 24px 14px;
+  position: relative;
+  z-index: 2;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Top Hero Images Section */
+.about-hero-images {
+  position: relative;
+  width: 100%;
+  height: 255px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+/* Left Vertical Capsule Image — Building, sits behind right image */
+.about-img-left {
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  width: 148px;
+  height: 235px;
+  border-radius: 74px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  border: 3px solid #ffffff;
+  z-index: 1;              /* BEHIND right image */
+  animation: heroLeftIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.about-img-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.about-img-left:hover img {
+  transform: scale(1.05);
+}
+
+/* Right Horizontal Capsule Image — Meeting, ON TOP of left */
+.about-img-right {
+  position: absolute;
+  right: 0px;
+  top: 22px;
+  width: 230px;
+  height: 152px;
+  border-radius: 76px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  border: 3px solid #ffffff;
+  z-index: 2;              /* IN FRONT of left image */
+  animation: heroRightIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.about-img-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease;
+}
+
+.about-img-right:hover img {
+  transform: scale(1.05);
+}
+
+/* Section 1: What is a GCC */
+.about-section-title {
+  margin-top: 6px;
+  margin-bottom: 8px;
+  animation: fadeInUp 0.5s ease-out 0.2s both;
+}
+
+.about-section-title .sub {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #881518;
+  letter-spacing: 0.4px;
+  display: block;
+}
+
+.about-section-title .main {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #881518;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  display: block;
+}
+
+.about-description {
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #333333;
+  margin-bottom: 18px;
+  animation: fadeInUp 0.5s ease-out 0.3s both;
+}
+
+.about-description strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Section 2: How It Benefits You */
+.about-benefits-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #881518;
+  letter-spacing: -0.2px;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.5s ease-out 0.4s both;
+}
+
+/* Benefits List */
+.about-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 3px 0;
+  transition: transform 0.2s ease;
+  animation: benefitSlideIn 0.45s ease-out both;
+}
+
+.benefit-item:hover {
+  transform: translateX(4px);
+}
+
+.benefit-icon-wrapper {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(136, 21, 24, 0.12));
+}
+
+.benefit-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #2b2b2b;
+  line-height: 1.38;
+  flex: 1;
+}
+
+/* Staggered entrance for benefits */
+.benefit-item:nth-child(1) { animation-delay: 0.45s; }
+.benefit-item:nth-child(2) { animation-delay: 0.5s; }
+.benefit-item:nth-child(3) { animation-delay: 0.55s; }
+.benefit-item:nth-child(4) { animation-delay: 0.6s; }
+.benefit-item:nth-child(5) { animation-delay: 0.65s; }
+.benefit-item:nth-child(6) { animation-delay: 0.7s; }
+.benefit-item:nth-child(7) { animation-delay: 0.75s; }
+
+/* Back Button */
+.about-back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(136, 21, 24, 0.88);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.about-back-btn:hover {
+  background: #881518;
+  transform: scale(1.12);
+}
+
+/* Animations */
+@keyframes heroLeftIn {
+  from { opacity: 0; transform: translateX(-20px) scale(0.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes heroRightIn {
+  from { opacity: 0; transform: translateX(20px) scale(0.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes benefitSlideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
