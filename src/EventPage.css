@@ -5,7 +5,10 @@
   max-width: 440px;
   height: 100vh;
   height: 100dvh;
-  background-color: #f5e8dc;
+  background-image: url('/Bharatiya Converge Event page BG.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
   display: flex;

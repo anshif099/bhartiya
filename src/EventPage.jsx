@@ -34,16 +34,6 @@ const DecoArcs = ({ flip }) => (
 function EventPage({ onBack, onTabChange }) {
   return (
     <main className="ev-page">
-      {/* Decorative arcs */}
-      <div className="ev-deco-tr" aria-hidden="true"><DecoArcs flip={false} /></div>
-      <div className="ev-deco-bl" aria-hidden="true"><DecoArcs flip={true} /></div>
-
-      {/* World map dot watermark in middle */}
-      <div className="ev-map-dots" aria-hidden="true" />
-
-      {/* Back button */}
-      <button className="ev-back-btn" onClick={onBack} title="Back">&#8592;</button>
-
       {/* ── Main Content Column ── */}
       <div className="ev-content">
 

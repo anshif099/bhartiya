@@ -124,11 +124,6 @@ function BhartiyaPage({ onBack, onTabChange }) {
           </button>
         ))}
       </aside>
-
-      {/* Floating back button */}
-      <button className="bp-back-btn" onClick={onBack} title="Back">
-        &#8592;
-      </button>
     </main>
   )
 }

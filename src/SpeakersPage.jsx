@@ -14,6 +14,7 @@ const SPEAKERS = [
     role: 'Former CIO, Lululemon',
     photo: '/Bharatiya Converge Speakers Julie.webp',
     photoSide: 'right',
+    linkedin: 'https://www.linkedin.com/in/julieaverill/',
   },
   {
     id: 'peter',
@@ -21,6 +22,7 @@ const SPEAKERS = [
     role: 'CEO, AllSaints',
     photo: '/Bharatiya Converge Speakers Peter.webp',
     photoSide: 'left',
+    linkedin: 'https://www.linkedin.com/in/peter-wood-7391734b/',
   },
   {
     id: 'alfie',
@@ -28,6 +30,7 @@ const SPEAKERS = [
     role: 'CTO, AllSaints',
     photo: '/Bharatiya Converge Speakers Alfie.webp',
     photoSide: 'right',
+    linkedin: 'https://www.linkedin.com/in/alfiemeekings/',
   },
 ]
 
@@ -44,8 +47,6 @@ const LinkedInIcon = () => (
 function SpeakersPage({ onBack, onTabChange }) {
   return (
     <main className="sp-page">
-      <button className="sp-back-btn" onClick={onBack} title="Back">&#8592;</button>
-
       {/* Main Content */}
       <div className="sp-content">
         <h1 className="sp-main-heading">
@@ -70,7 +71,18 @@ function SpeakersPage({ onBack, onTabChange }) {
                   <span className="sp-card-name">{s.name}</span>
                   <div className="sp-card-role-row">
                     <span className="sp-card-role">{s.role}</span>
-                    <LinkedInIcon />
+                    {s.linkedin && (
+                      <a
+                        href={s.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="sp-linkedin-link"
+                        title={`${s.name} LinkedIn`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <LinkedInIcon />
+                      </a>
+                    )}
                   </div>
                 </div>
 

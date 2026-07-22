@@ -64,11 +64,6 @@ const TABS = [
 function AboutGccsPage({ onBack, onTabChange }) {
   return (
     <main className="about-page">
-      {/* Back Button */}
-      <button className="about-back-btn" onClick={onBack} title="Back">
-        &#8592;
-      </button>
-
       {/* Main Content Column */}
       <div className="about-content">
         {/* Top Cropped Hero Images */}
