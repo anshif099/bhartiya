@@ -7,7 +7,7 @@ function App({ onSlideComplete }) {
   const isDragging = useRef(false)
   const startX = useRef(0)
   const trackRef = useRef(null)
-  const maxOffsetRef = useRef(170)
+  const maxOffsetRef = useRef(166)
 
   useEffect(() => {
     const handleGlobalMove = (e) => {
@@ -17,8 +17,8 @@ function App({ onSlideComplete }) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX
       const deltaX = clientX - startX.current
       const trackWidth = trackRef.current.clientWidth
-      const knobWidth = 72
-      const maxDrag = Math.max(1, trackWidth - knobWidth - 8)
+      const knobWidth = 58
+      const maxDrag = Math.max(1, trackWidth - knobWidth - 12)
       maxOffsetRef.current = maxDrag
 
       let newProgress = Math.max(0, Math.min(1, deltaX / maxDrag))
@@ -59,9 +59,9 @@ function App({ onSlideComplete }) {
     e.stopPropagation()
     isDragging.current = true
     const clientX = e.touches ? e.touches[0].clientX : e.clientX
-    const trackWidth = trackRef.current ? trackRef.current.clientWidth : 250
-    const knobWidth = 72
-    const maxDrag = Math.max(1, trackWidth - knobWidth - 8)
+    const trackWidth = trackRef.current ? trackRef.current.clientWidth : 240
+    const knobWidth = 58
+    const maxDrag = Math.max(1, trackWidth - knobWidth - 12)
     maxOffsetRef.current = maxDrag
     startX.current = clientX - dragProgress * maxDrag
   }
@@ -78,7 +78,7 @@ function App({ onSlideComplete }) {
     }
   }
 
-  const knobTranslateX = dragProgress * (maxOffsetRef.current || 170)
+  const knobTranslateX = dragProgress * (maxOffsetRef.current || 166)
 
   return (
     <main className="mobile-page-container">
