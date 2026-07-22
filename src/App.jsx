@@ -12,22 +12,26 @@ function App({ onSlideComplete }) {
   useEffect(() => {
     const handleGlobalMove = (e) => {
       if (!isDragging.current || !trackRef.current) return
+      if (e.stopPropagation) e.stopPropagation()
+
       const clientX = e.touches ? e.touches[0].clientX : e.clientX
       const deltaX = clientX - startX.current
       const trackWidth = trackRef.current.clientWidth
       const knobWidth = 72
-      const maxDrag = Math.max(1, trackWidth - knobWidth - 12)
+      const maxDrag = Math.max(1, trackWidth - knobWidth - 8)
       maxOffsetRef.current = maxDrag
 
       let newProgress = Math.max(0, Math.min(1, deltaX / maxDrag))
       setDragProgress(newProgress)
     }
 
-    const handleGlobalEnd = () => {
+    const handleGlobalEnd = (e) => {
       if (!isDragging.current) return
+      if (e.stopPropagation) e.stopPropagation()
       isDragging.current = false
+
       setDragProgress((prev) => {
-        if (prev > 0.65) {
+        if (prev > 0.45) {
           setIsUnlocked(true)
           onSlideComplete?.()
           return 1
@@ -40,7 +44,7 @@ function App({ onSlideComplete }) {
 
     window.addEventListener('mousemove', handleGlobalMove)
     window.addEventListener('mouseup', handleGlobalEnd)
-    window.addEventListener('touchmove', handleGlobalMove)
+    window.addEventListener('touchmove', handleGlobalMove, { passive: false })
     window.addEventListener('touchend', handleGlobalEnd)
 
     return () => {
@@ -52,15 +56,18 @@ function App({ onSlideComplete }) {
   }, [onSlideComplete])
 
   const handleStart = (e) => {
+    e.stopPropagation()
     isDragging.current = true
     const clientX = e.touches ? e.touches[0].clientX : e.clientX
-    const trackWidth = trackRef.current ? trackRef.current.clientWidth : 270
+    const trackWidth = trackRef.current ? trackRef.current.clientWidth : 250
     const knobWidth = 72
-    const maxDrag = Math.max(1, trackWidth - knobWidth - 12)
+    const maxDrag = Math.max(1, trackWidth - knobWidth - 8)
+    maxOffsetRef.current = maxDrag
     startX.current = clientX - dragProgress * maxDrag
   }
 
-  const handleTrackClick = () => {
+  const handleTrackClick = (e) => {
+    e.stopPropagation()
     if (!isUnlocked) {
       setDragProgress(1)
       setIsUnlocked(true)
@@ -76,7 +83,7 @@ function App({ onSlideComplete }) {
   return (
     <main className="mobile-page-container">
       <div className="content-wrapper">
-        {/* Top Header Logo Section using SVG file */}
+        {/* Top Header Logo Section */}
         <header className="brand-header">
           <img 
             src="/favicon.svg" 
@@ -111,7 +118,7 @@ function App({ onSlideComplete }) {
         </section>
 
         {/* Interactive Slide Button Section */}
-        <section className="slider-section">
+        <section className="slider-section" onClick={(e) => e.stopPropagation()}>
           <div 
             className={`slider-container ${isUnlocked ? 'unlocked' : ''}`}
             ref={trackRef}
@@ -123,14 +130,7 @@ function App({ onSlideComplete }) {
               onMouseDown={handleStart}
               onTouchStart={handleStart}
             >
-              <div className="knob-outer-ring">
-                <div className="knob-inner-circle">
-                  <svg viewBox="0 0 32 32" className="knob-c-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="16" cy="16" r="14" fill="#202c46" />
-                    <path d="M19.5 11C18.4 9.6 16.7 9 14.8 9C10.9 9 7.8 12.1 7.8 16C7.8 19.9 10.9 23 14.8 23C16.7 23 18.4 22.4 19.5 21" stroke="#ffffff" strokeWidth="3.2" strokeLinecap="round" />
-                  </svg>
-                </div>
-              </div>
+              <img src="/Slider button.svg" alt="Knob" className="slider-button-img" draggable="false" />
             </div>
           </div>
 
