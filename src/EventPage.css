@@ -65,7 +65,7 @@
   align-items: center;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 36px 18px 0 18px;
+  padding: 36px 0px 0 0px;
   position: relative;
   z-index: 2;
   scrollbar-width: none;
@@ -107,7 +107,7 @@
 }
 
 .ev-date {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 900;
   color: #881518;
   text-align: center;

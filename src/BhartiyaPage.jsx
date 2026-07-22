@@ -29,8 +29,8 @@ function BhartiyaPage({ onBack, onTabChange }) {
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId)
-    if (tabId === 'about' && onTabChange) {
-      onTabChange('about')
+    if (onTabChange) {
+      onTabChange(tabId)
     }
   }
 

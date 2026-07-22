@@ -7,6 +7,8 @@
   height: 100dvh;
   background-image: url('/Bharatiya Converge Speakers BG.webp');
   background-size: 100% 100%;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
@@ -74,8 +76,9 @@
 .sp-cards {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 30px;
   width: 100%;
+  margin-top: 30px;
 }
 
 /* Each card wrapper reserves space so heads don't touch card above */
@@ -119,7 +122,7 @@
 }
 
 .sp-card-name {
-  font-size: 16.5px;
+  font-size: 24px;
   font-weight: 800;
   color: #881518;
   line-height: 1.15;
@@ -133,7 +136,7 @@
 }
 
 .sp-card-role {
-  font-size: 11px;
+  font-size: 6px;
   font-weight: 500;
   color: #4a3a3a;
   line-height: 1.2;
@@ -141,10 +144,24 @@
 }
 
 /* LinkedIn inline icon */
+.sp-linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin-left: 2px;
+}
+.sp-linkedin-link:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
 .sp-linkedin-icon {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
+  display: block;
 }
 
 /* Speaker photo — floats neatly above pill card without touching card above */
